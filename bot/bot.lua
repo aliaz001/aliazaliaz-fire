@@ -1,5 +1,4 @@
--- #Beyond Reborn Robot
--- #@BeyondTeam
+-- #@fire021tm
 
 tdcli = dofile('./tg/tdcli.lua')
 serpent = (loadfile "./libs/serpent.lua")()
@@ -19,7 +18,7 @@ local notify = lgi.require('Notify')
 notify.init ("Telegram updates")
 chats = {}
 plugins = {}
-helper_username = 'ExampleHelperBot'  -- Input Helper Username Here Without @
+helper_id =  282470335 --Put Your Helper Bot ID Here
 
 function do_notify (user, msg)
 	local n = notify.Notification.new(user, msg)
@@ -82,36 +81,43 @@ function create_config( )
   -- A simple config with basic plugins and ourselves as privileged user
 	config = {
     enabled_plugins = {
+		"banhammer_fa",
 		"banhammer",
-		"groupmanager",
+		"gpsettings_en",
+		"gpsettings_fa",
+		"helpenergy",
+		"expire",
+		"nerkh",
+		"azan",
+		"del",
+		"id",
+		"cleanbot",
+		"CleanMember",
+		"lock_fosh",
+		"monshi",
+		"write",
 		"msg-checks",
 		"plugins",
 		"tools",
 		"fun",
 
 	},
-    sudo_users = {111334847, 157059515, sudo_id},
+    sudo_users = { 282470335, sudo_id},
     admins = {},
     disabled_channels = {},
     moderation = {data = './data/moderation.json'},
-    info_text = [[》Beyond Reborn v6.0
-An advanced administration bot based on https://valtman.name/telegram-cli
+    info_text = [[》fire v1.0
 
-》https://github.com/BeyondTeam/BDReborn 
+
+》https://github.com/aliazaliaz/fire.git
+
+
 
 》Admins :
-》@SoLiD ➣ Founder & Developer《
-》@Makan ➣ Developer《
-》@ToOfan ➣ Developer《
 
-》Special thanks to :
-》Beyond Team Members
+》@aliaz003 ➣ Founder & Developer《
 
-》Our channel :
-》@BeyondTeam《
-
-》Our website :
-》http://BeyondTeam.ir
+》@Samyar35 ➣ Developer《
 ]],
   }
 	serialize_to_file(config, './data/config.lua')
@@ -153,7 +159,7 @@ function load_plugins()
 			print('\27[31m'..err..'\27[39m')
 		end
 	end
-	print('\n'..#config.enabled_plugins..' Plugins Are Active\n\nStarting BDReborn Robot...\n')
+	print('\n'..#config.enabled_plugins..' Plugins Are Active\n\nStarting ENERGY Robot...\n')
 end
 
 load_plugins()
